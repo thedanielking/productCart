@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product list with cart</title>
+
+  <link href="./output.css" rel="stylesheet">
+
+  <!-- my font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --clr--red: hsl(14, 86%, 42%);
+      --clr--green: hsl(159, 69%, 38%);
+      --clr--rose-50: hsl(20, 50%, 98%);
+      --clr--rose-100: hsl(13, 31%, 94%);
+      --clr--rose-300: hsl(14, 25%, 72%);
+      --clr--rose-400: hsl(7, 20%, 60%);
+      --clr--rose-500: hsl(12, 20%, 44%);
+      --clr--rose--800: hsl(12, 67%, 18%);
+      --clr--rose--900: hsl(14, 65%, 9%);
+      --clr--black: rgba(0, 0, 0, 0.616);
+    }
+
+    
+    body{
+      background: var(--clr--rose-50);
+      font-size: 16px;
+      font-family: "Red Hat Text", sans-serif;
+    }
+
+
+
+  </style>
+
+  <script defer  src="./app.js"></script>
+
+ 
+</head>
+<body class="relative">
+  
+  <div class="p-6 flex flex-col md:flex-row md:gap-6">
+
+    <div class="space-y-6 md:w-4/5">
+      <h1 class="font-bold text-2xl md:text-3xl">Desserts</h1>
+      <section class="grid gap-4 place-content-center md:grid-cols-2 lg:grid-cols-3 lg:gap-6" id="foods">
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-waffle-desktop.jpg" alt="waffle">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-waffle-tablet.jpg" alt="waffle">
+            <img src="/assets/images/image-waffle-mobile.jpg" alt="waffle" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Waffle</p>
+            <h2 class="font-medium text-lg">Waffle with Berries</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$6.50</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-creme-brulee-desktop.jpg" alt="creme-brulee">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-creme-brulee-tablet.jpg" alt="creme-brulee">
+            <img src="/assets/images/image-creme-brulee-mobile.jpg" alt="creme-brulee" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Crème Brûlée</p>
+            <h2 class="font-medium text-lg">Vanilla Bean Crème Brûlée</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$7.00</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-macaron-desktop.jpg" alt="macaron">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-macaron-tablet.jpg" alt="macaron">
+            <img src="/assets/images/image-macaron-mobile.jpg" alt="macaron" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Macaron</p>
+            <h2 class="font-medium text-lg">Macaron Mix of Five</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$8.00</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-tiramisu-desktop.jpg" alt="tiramisu">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-tiramisu-tablet.jpg" alt="tiramisu">
+            <img src="/assets/images/image-tiramisu-mobile.jpg" alt="tiramisu" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Tiramisu</p>
+            <h2 class="font-medium text-lg">Classic Tiramisu</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$5.50</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-baklava-desktop.jpg" alt="baklava">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-baklava-tablet.jpg" alt="waffle">
+            <img src="/assets/images/image-baklava-mobile.jpg" alt="baklava" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Baklava</p>
+            <h2 class="font-medium text-lg">Pistachio Baklava</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$4.00</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-meringue-desktop.jpg" alt="meringue">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-meringue-tablet.jpg" alt="meringue">
+            <img src="/assets/images/image-meringue-mobile.jpg" alt="meringue" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Pie</p>
+            <h2 class="font-medium text-lg">Lemon Meringue Pie</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$5.00</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-cake-desktop.jpg" alt="cake">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-cake-tablet.jpg" alt="cake">
+            <img src="/assets/images/image-cake-mobile.jpg" alt="cake" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Cake</p>
+            <h2 class="font-medium text-lg">Red Velvet Cake</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$4.50</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-brownie-desktop.jpg" alt="brownie">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-brownie-tablet.jpg" alt="brownie">
+            <img src="/assets/images/image-brownie-mobile.jpg" alt="brownie" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Brownie</p>
+            <h2 class="font-medium text-lg">Salted Caramel Brownie</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$5.50</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <picture class="relative">
+            <source media = "(min-width: 1024px)" srcset="/assets/images/image-panna-cotta-desktop.jpg" alt="panna-cotta">
+            <source media = "(min-width: 768px)" srcset="/assets/images/image-panna-cotta-tablet.jpg" alt="panna-cotta">
+            <img src="/assets/images/image-panna-cotta-mobile.jpg" alt="panna-cotta" class="rounded-xl">
+          </picture>
+
+          <div class="flex gap-2 justify-center border border-gray-500 py-2 px-6 bg-white rounded-full w-fit mx-auto -translate-y-1/2 hover:border-(--clr--red) cursor-pointer" id="addToCartBtn" >
+            <img src="/assets/images/icon-add-to-cart.svg" alt="addToCart">
+            <p class="font-medium hover:text-(--clr--red)">Add to Cart</p>
+          </div>
+
+          <div class="flex gap-9 justify-between  py-3 px-9 bg-(--clr--red) rounded-full w-fit mx-auto -translate-y-[80px] translate-x-[50%] md:translate-x-[10%] lg:translate-x-[30%] absolute hidden" id="orderQuantity">
+            <img src="/assets/images/icon-decrement-quantity.svg" alt="minus" class="minusIcon">
+            <span id="quantity">1</span>
+            <img src="/assets/images/icon-increment-quantity.svg" alt="plus" class="plusIcon">
+          </div>
+
+          <div>
+            <p class="text-gray-600 text-sm">Panna Cotta</p>
+            <h2 class="font-medium text-lg">Vanilla Panna Cotta</h2>
+            <p class="text-(--clr--red) font-medium" id="orderPrice">$6.50</p>
+          </div>
+        </div>
+        
+      </section>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 space-y-12 md:h-fit md:w-2/5">
+      <h2 class="text-(--clr--red) font-bold text-lg">Your Cart(<span id="cartCount">0</span>)</h2>
+      <section class="">
+        <div id="cartContainer">
+          <div id="emptyCart">
+            <img src="/assets/images/illustration-empty-cart.svg" alt="empty cart" class="mx-auto">
+            <p class="text-sm text-(--clr--rose-500) font-medium text-center">Your added items will appear here</p>
+          </div>
+        </div>
+        <div class="space-y-9 hidden" id="confirmOrder">
+          <div class="flex justify-between">
+            <p>Order Total</p>
+            <p class="font-bold text-2xl" id="totalPrice">$46.50</p>
+          </div>
+          <div class="flex justify-center gap-2 bg-(--clr--rose-100) p-4 rounded-xl">
+            <img src="/assets/images/icon-carbon-neutral.svg" alt="tree">
+            <p class="text-gray-800 text-sm md:text-lg">This is a <span class="text-black font-medium">carbon-neutral</span> delivery</p>
+          </div>
+          <button class="bg-(--clr--red) w-full p-4 rounded-full text-white md:text-lg hover:bg-(--clr--rose--800) cursor-pointer" onclick="confirmOrderBtn()">Confirm Order</button>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  <section class="fixed p-2 block bg-(--clr--black) bottom-0 w-full top-0 flex items-center justify-center hidden" id="orderConfirmContainer">
+    <article class="bg-white p-4 w-full bottom-0 space-y-6 md:w-[50vw]">
+      <img src="/assets/images/icon-order-confirmed.svg" alt="order confirmed">
+      <div>
+        <h1 class="font-bold text-2xl">Order Confirmed</h1>
+        <p class="text-sm">We hope you enjoy your food!</p>
+      </div>
+
+      <div class="bg-(--clr--rose-100) p-4 rounded-xl" id="confirmedElementsContainer">
+      </div>
+      <button class="bg-(--clr--red) w-full rounded-full p-4 text-white" onclick="clearCart()">Start New Order</button>
+    </article>
+  </section>
+</body>
+</html>
