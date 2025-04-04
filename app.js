@@ -1,5 +1,5 @@
 const fetchData = (index, isConfirmed)=>{
-    const fetchPromise = fetch("/data.json");
+    const fetchPromise = fetch("./data.json");
     fetchPromise.then((response)=>{
         if(!response.ok){
             throw new Error (`HTTP error: ${response.status}`)
