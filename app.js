@@ -138,7 +138,7 @@ const createCartElement = (data, index)=>{
           </div>
         </div>
         <div class="border-2 border-gray-400 p-1 lg:p-2 rounded-full" onClick ="deleteFunction(${index})">
-          <img src="/assets/images/icon-remove-item.svg" alt="delete" class="w-3 lg:w-5">
+          <img src="./assets/images/icon-remove-item.svg" alt="delete" class="w-3 lg:w-5">
         </div>
       </div>`
 
